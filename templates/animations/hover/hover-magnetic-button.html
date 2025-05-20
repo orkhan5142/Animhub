@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magnetic Button Hover Effect</title>
+  <style>
+    /* Magnetic Button Hover Animation */
+    .magnetic-button {
+      position: relative;
+      padding: 18px 36px;
+      background: linear-gradient(45deg, #7c3aed, #4f46e5);
+      border: none;
+      border-radius: 30px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.5);
+    }
+
+    .magnetic-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 30px -10px rgba(124, 58, 237, 0.7);
+    }
+
+    .magnetic-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2));
+      transform: translateY(-100%);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      z-index: 1;
+    }
+
+    .magnetic-button:hover::before {
+      transform: translateY(0);
+    }
+
+    .magnetic-button::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: rgba(255, 255, 255, 0.5);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .magnetic-button:hover::after {
+      transform: scaleX(1);
+    }
+
+    .magnetic-button span {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <button class="magnetic-button"><span>Hover Me</span></button>
+    </div>
+    <div class="animation-info">
+      <h3>Magnetic Button Hover Effect</h3>
+      <p>A premium button with magnetic-like animation that scales slightly and displays a smooth gradient shine effect when hovered, creating an inviting interactive experience.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Hover</span>
+        <span class="tag">Button</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="magnetic-button">View Code</a>
+        <button class="download-btn" data-animation="magnetic-button">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geometric Transformation Loading Animation</title>
+  <style>
+    /* Geometric Transformation Animation */
+    .geometric-transform {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      animation: container-rotate 6s linear infinite;
+    }
+
+    .geometric-shape {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 80px;
+      height: 80px;
+      border: 3px solid #22f10f;
+      animation: shape-morph 6s ease-in-out infinite;
+    }
+
+    .inner-shape {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+      border: 2px solid #22f10f;
+      animation: inner-morph 6s ease-in-out infinite;
+    }
+
+    .dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: #22f10f;
+      border-radius: 50%;
+      animation: dot-move 6s ease-in-out infinite;
+      box-shadow: 0 0 10px #22f10f;
+    }
+
+    .dot:nth-child(1) {
+      top: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 0s;
+    }
+
+    .dot:nth-child(2) {
+      top: 50%;
+      right: -4px;
+      transform: translateY(-50%);
+      animation-delay: 1.5s;
+    }
+
+    .dot:nth-child(3) {
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation-delay: 3s;
+    }
+
+    .dot:nth-child(4) {
+      top: 50%;
+      left: -4px;
+      transform: translateY(-50%);
+      animation-delay: 4.5s;
+    }
+
+    @keyframes container-rotate {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+    }
+
+    @keyframes shape-morph {
+      0%, 100% {
+        border-radius: 0%;
+        transform: rotate(0deg);
+      }
+      25% {
+        border-radius: 50% 0% 0% 0%;
+        transform: rotate(90deg);
+      }
+      50% {
+        border-radius: 50%;
+        transform: rotate(180deg);
+      }
+      75% {
+        border-radius: 0% 0% 0% 50%;
+        transform: rotate(270deg);
+      }
+    }
+
+    @keyframes inner-morph {
+      0%, 100% {
+        border-radius: 50%;
+        transform: rotate(0deg);
+      }
+      25% {
+        border-radius: 0%;
+        transform: rotate(-90deg);
+      }
+      50% {
+        border-radius: 50% 0% 50% 0%;
+        transform: rotate(-180deg);
+      }
+      75% {
+        border-radius: 0% 50% 0% 50%;
+        transform: rotate(-270deg);
+      }
+    }
+
+    @keyframes dot-move {
+      0%, 100% {
+        transform: translateX(-50%) scale(1);
+        box-shadow: 0 0 10px #0f4bf1;
+      }
+      12.5%, 37.5%, 62.5%, 87.5% {
+        transform: translateX(-50%) scale(1.5) rotate(180deg);
+        box-shadow: 0 0 15px #daf10f, 0 0 20px #f10f0f;
+      }
+      25%, 50%, 75% {
+        transform: translateX(-50%) scale(1) rotate(360deg);
+        box-shadow: 0 0 10px #f10f0f;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="geometric-transform">
+        <div class="geometric-shape">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="inner-shape"></div>
+        </div>
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Geometric Transformation Effect</h3>
+      <p>A mesmerizing animation featuring shapes that morph between different geometric forms with glowing dots tracing their path.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Geometry</span>
+        <span class="tag">Morph</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="geometric-transform">View Code</a>
+        <button class="download-btn" data-animation="geometric-transform">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

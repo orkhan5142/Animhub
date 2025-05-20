@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elastic Bounce Effect (Repeating)</title>
+  <style>
+    .bounce-text {
+      font-size: 42px;
+      font-weight: bold;
+      display: flex;
+    }
+
+    .bounce-text span {
+      display: inline-block;
+      color: #2fbee9;
+      animation: bounce 2s ease-in-out infinite;
+    }
+
+    .bounce-text span:nth-child(1) { animation-delay: 0s; }
+    .bounce-text span:nth-child(2) { animation-delay: 0.1s; }
+    .bounce-text span:nth-child(3) { animation-delay: 0.2s; }
+    .bounce-text span:nth-child(4) { animation-delay: 0.3s; }
+    .bounce-text span:nth-child(5) { animation-delay: 0.4s; }
+    .bounce-text span:nth-child(6) { animation-delay: 0.5s; }
+    .bounce-text span:nth-child(7) { animation-delay: 0.6s; }
+    .bounce-text span:nth-child(8) { animation-delay: 0.7s; }
+    .bounce-text span:nth-child(9) { animation-delay: 0.8s; }
+    .bounce-text span:nth-child(10) { animation-delay: 0.9s; }
+    .bounce-text span:nth-child(11) { animation-delay: 1s; }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0) scale(1); }
+      20% { transform: translateY(-20px) scaleY(1.2); }
+      40% { transform: translateY(10px) scaleY(0.8); }
+      60% { transform: translateY(-5px) scaleY(1.1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="bounce-text">
+        <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>&nbsp;</span>
+        <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Elastic Bounce Effect (Repeating)</h3>
+      <p>A playful animation that continuously makes letters bounce with a stretch, creating lively motion.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Bounce</span>
+        <span class="tag">Elastic</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="elastic-bounce">View Code</a>
+        <button class="download-btn" data-animation="elastic-bounce">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

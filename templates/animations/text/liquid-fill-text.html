@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Text Liquid Fill Animation</title>
+  <style>
+    
+
+    /* Text Liquid Fill Animation */
+    .liquid-fill {
+      font-size: 42px;
+      font-weight: bold;
+      position: relative;
+      color: #e7d910; /* Neutral gray when not active */
+      background-color: #e7d910;
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: color 0.3s ease;
+    }
+
+    .liquid-fill::before {
+      content: "Hello World";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: transparent;
+      background-image: linear-gradient(to top, #6366f1 0%, #6366f1 50%, transparent 50%);
+      background-size: 100% 200%;
+      background-position: 0% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      transition: background-position 0.8s ease-in-out;
+    }
+
+    .liquid-fill:hover::before {
+      background-position: 0% 0%;
+    }
+
+    .liquid-fill:hover {
+      color: transparent;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="liquid-fill">
+        Hello World
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Interactive Liquid Fill Text Effect</h3>
+      <p>A professional animation that activates on hover, simulating liquid filling the text with smooth transitions.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Interactive</span>
+        <span class="tag">Hover</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="liquid-fill">View Code</a>
+        <button class="download-btn" data-animation="liquid-fill">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

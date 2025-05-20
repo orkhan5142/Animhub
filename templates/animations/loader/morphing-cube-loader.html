@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morphing Cube Loading Animation</title>
+  <style>
+    /* Morphing Cube Animation */
+    .morphing-cube {
+      display: inline-block;
+      position: relative;
+      width: 60px;
+      height: 60px;
+      perspective: 600px;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotate-cube 4s infinite ease-in-out;
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.8;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .front {
+      background: #22f10f;
+      transform: translateZ(30px);
+      animation: morph 4s infinite ease-in-out;
+    }
+
+    .back {
+      background: #19c70c;
+      transform: rotateY(180deg) translateZ(30px);
+      animation: morph 4s infinite ease-in-out reverse;
+    }
+
+    .right {
+      background: #15a30a;
+      transform: rotateY(90deg) translateZ(30px);
+      animation: morph 4s infinite ease-in-out 1s;
+    }
+
+    .left {
+      background: #118c08;
+      transform: rotateY(-90deg) translateZ(30px);
+      animation: morph 4s infinite ease-in-out 2s;
+    }
+
+    .top {
+      background: #0d7506;
+      transform: rotateX(90deg) translateZ(30px);
+      animation: morph 4s infinite ease-in-out 1.5s;
+    }
+
+    .bottom {
+      background: #095e05;
+      transform: rotateX(-90deg) translateZ(30px);
+      animation: morph 4s infinite ease-in-out 2.5s;
+    }
+
+    @keyframes rotate-cube {
+      0%, 100% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+      25% {
+        transform: rotateX(90deg) rotateY(45deg);
+      }
+      50% {
+        transform: rotateX(180deg) rotateY(90deg);
+      }
+      75% {
+        transform: rotateX(270deg) rotateY(135deg);
+      }
+    }
+
+    @keyframes morph {
+      0%, 100% {
+        border-radius: 0%;
+      }
+      50% {
+        border-radius: 50%;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="morphing-cube">
+        <div class="cube">
+          <div class="cube-face front"></div>
+          <div class="cube-face back"></div>
+          <div class="cube-face right"></div>
+          <div class="cube-face left"></div>
+          <div class="cube-face top"></div>
+          <div class="cube-face bottom"></div>
+        </div>
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Morphing Cube Effect</h3>
+      <p>A mesmerizing 3D cube that rotates in space while its faces transform between square and circular shapes.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">3D</span>
+        <span class="tag">Morphing</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="morphing-cube">View Code</a>
+        <button class="download-btn" data-animation="morphing-cube">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

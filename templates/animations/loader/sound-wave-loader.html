@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Wave Loading Animation</title>
+  <style>
+    /* Sound Wave Animation */
+    .sound-wave {
+      display: inline-flex;
+      align-items: center;
+      height: 60px;
+      gap: 3px;
+    }
+
+    .wave-bar {
+      width: 4px;
+      background-color: #f58f09;
+      border-radius: 2px;
+      animation: wave-up-down 1.2s ease-in-out infinite;
+      box-shadow: 0 0 6px #f18f0f;
+    }
+
+    .wave-bar:nth-child(1) { height: 15%; animation-delay: -1.1s; }
+    .wave-bar:nth-child(2) { height: 30%; animation-delay: -1.0s; }
+    .wave-bar:nth-child(3) { height: 60%; animation-delay: -0.9s; }
+    .wave-bar:nth-child(4) { height: 80%; animation-delay: -0.8s; }
+    .wave-bar:nth-child(5) { height: 60%; animation-delay: -0.7s; }
+    .wave-bar:nth-child(6) { height: 80%; animation-delay: -0.6s; }
+    .wave-bar:nth-child(7) { height: 100%; animation-delay: -0.5s; }
+    .wave-bar:nth-child(8) { height: 80%; animation-delay: -0.4s; }
+    .wave-bar:nth-child(9) { height: 60%; animation-delay: -0.3s; }
+    .wave-bar:nth-child(10) { height: 80%; animation-delay: -0.2s; }
+    .wave-bar:nth-child(11) { height: 60%; animation-delay: -0.1s; }
+    .wave-bar:nth-child(12) { height: 30%; animation-delay: 0s; }
+    .wave-bar:nth-child(13) { height: 15%; animation-delay: 0.1s; }
+
+    @keyframes wave-up-down {
+      0%, 100% {
+        transform: scaleY(0.5);
+        opacity: 0.6;
+      }
+      50% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+    .circular-wave {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      transform: translate(-50%, -50%);
+    }
+
+    .wave-circle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border: 2px solid rgba(241, 162, 15, 0.5);
+      border-radius: 50%;
+      animation: pulse-out 3s infinite ease-out;
+      opacity: 0;
+    }
+
+    .wave-circle:nth-child(1) { animation-delay: 0s; }
+    .wave-circle:nth-child(2) { animation-delay: 0.6s; }
+    .wave-circle:nth-child(3) { animation-delay: 1.2s; }
+    .wave-circle:nth-child(4) { animation-delay: 1.8s; }
+    .wave-circle:nth-child(5) { animation-delay: 2.4s; }
+
+    @keyframes pulse-out {
+      0% {
+        transform: scale(0.1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
+
+    .wave-container {
+      position: relative;
+      width: 150px;
+      height: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="wave-container">
+        <div class="sound-wave">
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+          <div class="wave-bar"></div>
+        </div>
+        <div class="circular-wave">
+          <div class="wave-circle"></div>
+          <div class="wave-circle"></div>
+          <div class="wave-circle"></div>
+          <div class="wave-circle"></div>
+          <div class="wave-circle"></div>
+        </div>
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Sound Wave Effect</h3>
+      <p>A dynamic loading animation that combines audio wave bars with rippling circular pulses for a multi-dimensional effect.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Wave</span>
+        <span class="tag">Audio</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="sound-wave">View Code</a>
+        <button class="download-btn" data-animation="sound-wave">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

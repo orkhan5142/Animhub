@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Focus In Effect</title>
+  <style>
+    
+
+    .focus-text {
+      font-size: 42px;
+      font-weight: bold;
+      color: #08b92e;
+      filter: blur(5px);
+      opacity: 0.5;
+      transition: filter 0.5s ease, opacity 0.5s ease;
+    }
+
+    .focus-text:hover {
+      filter: blur(0);
+      opacity: 1;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="focus-text">
+        Hello World
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Text Focus In Effect</h3>
+      <p>A smooth animation triggered on hover, bringing text into focus from a blurred state.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Focus</span>
+        <span class="tag">Blur</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="focus-text">View Code</a>
+        <button class="download-btn" data-animation="focus-text">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

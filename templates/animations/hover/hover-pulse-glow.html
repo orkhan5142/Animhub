@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pulse Glow Hover Animation</title>
+  <style>
+    /* Pulse Glow Hover Animation */
+    .hover-element {
+      width: 150px;
+      height: 150px;
+      background-color: #333;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hover-element:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 123, 255, 0.3);
+    }
+
+    .hover-element:hover::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        transparent,
+        rgba(0, 123, 255, 0.1),
+        rgba(0, 123, 255, 0.4),
+        rgba(0, 123, 255, 0.1),
+        transparent
+      );
+      transform: rotate(45deg);
+      animation: pulse-glow 1.5s linear infinite;
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        transform: rotate(45deg) translateY(-100%);
+      }
+      100% {
+        transform: rotate(45deg) translateY(100%);
+      }
+    }
+
+    .hover-element::after {
+      content: 'Hover Me';
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="hover-element"></div>
+    </div>
+    <div class="animation-info">
+      <h3>Pulse Glow Hover Effect</h3>
+      <p>An elegant hover animation that lifts the element while triggering a pulsing glow effect that sweeps across the surface.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Hover</span>
+        <span class="tag">Glow</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="pulse-glow">View Code</a>
+        <button class="download-btn" data-animation="pulse-glow">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

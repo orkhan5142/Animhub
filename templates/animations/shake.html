@@ -1,0 +1,177 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parallax shake_Card Animation</title>
+  <style>
+    
+
+    .shake_card {
+      width: 360px;
+      height: 500px;
+      background: #fff;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                  box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .shake_card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .shake_card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #6b7280, #4b5563);
+      clip-path: circle(60% at 50% 0);
+      transition: clip-path 0.6s ease;
+      z-index: 1;
+    }
+
+    .shake_card:hover .shake_card-bg {
+      clip-path: circle(80% at 50% 20%);
+    }
+
+    .shake_card-image {
+      position: absolute;
+      top: 20%;
+      width: 80%;
+      left: 10%;
+      height: 40%;
+      object-fit: cover;
+      z-index: 2;
+      transition: transform 0.5s ease;
+    }
+
+    .shake_card-content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 24px;
+      z-index: 3;
+      background: linear-gradient(transparent, rgba(255, 255, 255, 0.95));
+    }
+
+    .shake_card-content h2 {
+      font-size: 1.9rem;
+      color: #1f2937;
+      margin: 0;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    }
+
+    .shake_card-content p {
+      font-size: 1rem;
+      color: #4b5563;
+      margin: 12px 0 0;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    }
+
+    .shake_card-content .btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 20px;
+      background: #1f2937;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s, 
+                  background 0.3s ease;
+    }
+
+    .shake_card:hover .shake_card-content h2,
+    .shake_card:hover .shake_card-content p,
+    .shake_card:hover .shake_card-content .btn {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .shake_card-content .btn:hover {
+      background: #111827;
+    }
+
+    .shake_card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+      opacity: 0;
+      z-index: 4;
+      transition: opacity 0.5s ease;
+    }
+
+    .shake_card:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .shake_card {
+      animation: fadeIn 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="shake_card">
+    <div class="shake_card-bg"></div>
+    <img class="shake_card-image" src="https://s3.amazonaws.com/libapps/accounts/47607/images/cooking_Free_Images.jpg" alt="shake_Card Image">
+    <div class="shake_card-content">
+      <h2>Creative Design</h2>
+      <p>Unleash your imagination with our innovative solutions.</p>
+      <a href="#" class="btn">Explore Now</a>
+    </div>
+  </div>
+
+  <script>
+    // Parallax effect on mouse move
+    const shake_card = document.querySelector('.shake_card');
+    const shake_cardImage = document.querySelector('.shake_card-image');
+    const shake_cardBg = document.querySelector('.shake_card-bg');
+
+    shake_card.addEventListener('mousemove', (e) => {
+      const rect = shake_card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const moveX = (x - centerX) / 25;
+      const moveY = (y - centerY) / 25;
+
+      shake_cardImage.style.transform = translate(${moveX}px, ${moveY}px);
+      shake_cardBg.style.transform = translate(${moveX * 0.5}px, ${moveY * 0.5}px);
+    });
+
+    shake_card.addEventListener('mouseleave', () => {
+      shake_cardImage.style.transform = 'translate(0, 0)';
+      shake_cardBg.style.transform = 'translate(0, 0)';
+    });
+  </script>
+</body>
+</html> -->

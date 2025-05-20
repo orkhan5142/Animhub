@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Text Effect (Repeating)</title>
+    <style>
+        .flip-text {
+            font-size: 42px;
+            font-weight: bold;
+            display: flex;
+            opacity: 1;
+        }
+
+        .flip-text span {
+            display: inline-block;
+            color: #025edf;
+            transform-origin: center bottom;
+            transform: perspective(500px) rotateX(-90deg);
+            animation: flip 4s forwards infinite;
+        }
+
+        @keyframes flip {
+            0%, 100% { transform: perspective(500px) rotateX(-90deg); }
+            50% { transform: perspective(500px) rotateX(0deg); }
+        }
+
+        .flip-text span:nth-child(1) { animation-delay: 0s; }
+        .flip-text span:nth-child(2) { animation-delay: 0.1s; }
+        .flip-text span:nth-child(3) { animation-delay: 0.2s; }
+        .flip-text span:nth-child(4) { animation-delay: 0.3s; }
+        .flip-text span:nth-child(5) { animation-delay: 0.4s; }
+        .flip-text span:nth-child(6) { animation-delay: 0.5s; }
+        .flip-text span:nth-child(7) { animation-delay: 0.6s; }
+        .flip-text span:nth-child(8) { animation-delay: 0.7s; }
+        .flip-text span:nth-child(9) { animation-delay: 0.8s; }
+        .flip-text span:nth-child(10) { animation-delay: 0.9s; }
+        .flip-text span:nth-child(11) { animation-delay: 1s; }
+    </style>
+</head>
+<body>
+    <div class="animation-card">
+        <div class="preview-area">
+            <div class="flip-text">
+                <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span><span>&nbsp;</span>
+                <span>W</span><span>o</span><span>r</span><span>l</span><span>d</span>
+            </div>
+        </div>
+        <div class="animation-info">
+            <h3>3D Flip Text Effect</h3>
+            <p>A dynamic 3D text animation that continuously flips each character, creating depth.</p>
+            <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">3D</span>
+        <span class="tag">Flip</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="3d-flip">View Code</a>
+        <button class="download-btn" data-animation="3d-flip">Download</button>
+      </div>
+        </div>
+    </div>
+</body>
+</html>

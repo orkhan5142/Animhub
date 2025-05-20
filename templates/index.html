@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimHub - Free Web Animations</title>
+    <link rel="stylesheet" href="/static/home.css">
+
+    
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <!-- Replace the nav section in index.html -->
+            <nav>
+                <div class="logo">
+                    <span class="logo-icon">✦</span>
+                    AnimHub
+                </div>
+                <div class="nav-links">
+                    
+                    <a href="https://gcraft.tech/about">About</a>
+                    <a href="https://gcraft.tech/">Contact</a>
+                </div>
+                <button class="mobile-menu-btn">☰</button>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="navbar-container">
+            <h1>Free High-Quality Web Animations</h1>
+            <p>Discover and download beautiful CSS and JavaScript animations for your next web project. Preview and customize animations before downloading the code.</p>
+            <div class="search-bar">
+                <input type="text" placeholder="Search animations...">
+                <button>Search</button>
+            </div>
+            <div class="categories">
+                <div class="category active">All</div>
+                <div class="category">Button</div>
+                <div class="category">Loading</div>
+                <div class="category">Text</div>
+                <div class="category">Hover</div>
+                <div class="category">Background</div>
+                <div class="category">Scroll</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="loader-section" class="animation-section loader">
+        <div class="container">
+        <div class="section-title">
+            <h2>Loader</h2>
+        </div>
+            <div class="animation-grid">
+                {% include 'animations/loader/circular-progress-loader.html' %}
+                {% include 'animations/loader/constellation-loader.html' %}
+                {% include 'animations/loader/geometric-transform-loader.html' %}
+                {% include 'animations/loader/morphing-cube-loader.html' %}
+                {% include 'animations/loader/particle-explosion-loader.html' %}
+                {% include 'animations/loader/pulse-dots-loader.html' %}
+                {% include 'animations/loader/sound-wave-loader.html' %}
+                {% include 'animations/loader/spinner-wave-loader.html' %}
+                
+            </div>
+        </div>
+        
+</section>
+        
+        <section id="hover-section" class="animation-section hover">
+            <div class="container">
+    <div class="section-title">
+        <h2>Hover</h2>
+    </div>
+            <div class="animation-grid">
+
+                {% include 'animations/hover/hover-glitch-text.html' %}
+                {% include 'animations/hover/hover-magnetic-button.html' %}
+                {% include 'animations/hover/hover-particle-explosion.html' %}
+                {% include 'animations/hover/hover-pulse-glow.html' %}
+                {% include 'animations/hover/hover-ripple-effect.html' %}
+                {% include 'animations/hover/hover-text-glow.html' %}
+                {% include 'animations/hover/hover-text-rainbow.html' %}
+               
+                
+            </div>
+        </div>
+        
+</section>
+        
+        
+        <section id="text-section" class="animation-section text">
+            <div class="container">
+    <div class="section-title">
+        <h2>Text</h2>
+    </div>
+            <div class="animation-grid">
+                {% include 'animations/text/3d-flip-text.html' %}
+                {% include 'animations/text/elastic-bounce-text.html' %} 
+                {% include 'animations/text/floating-letters-text.html' %}
+                {% include 'animations/text/glitch-text-effect.html' %}
+                {% include 'animations/text/liquid-fill-text.html' %}
+                {% include 'animations/text/perspective-rotation-text.html' %}
+                {% include 'animations/text/text-focus-in.html' %}
+                {% include 'animations/text/text-shadow-wave.html' %}
+                {% include 'animations/text/typewriter-text.html' %}
+               </div>
+        </div>
+        
+</section>
+        
+        
+    
+    <!-- Modal for Code Preview -->
+    <div class="modal" id="codeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Animation Name</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-section" id="modalPreview">
+                    <!-- Preview element will be added here dynamically -->
+                </div>
+                <div class="code-section">
+                    <div class="code-tabs">
+                        <div class="code-tab active" data-tab="html">HTML</div>
+                        <div class="code-tab" data-tab="css">CSS</div>
+                        <div class="code-tab" data-tab="js">JavaScript</div>
+                    </div>
+                    <div class="code-content" id="htmlCode">
+                        <!-- HTML code will be added here -->
+                    </div>
+                    <div class="code-content" id="cssCode" style="display: none;">
+                        <!-- CSS code will be added here -->
+                    </div>
+                    <div class="code-content" id="jsCode" style="display: none;">
+                        <!-- JS code will be added here -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="copy-code">Copy Code</button>
+                <button class="download-code">Download</button>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AnimHub</h3>
+                    <p>A collection of free, high-quality web animations for developers and designers. Use them in your projects for free.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#animations">Animations</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">Button Animations</a></li>
+                        <li><a href="#">Loading Animations</a></li>
+                        <li><a href="#">Text Animations</a></li>
+                        <li><a href="#">Hover Effects</a></li>
+                        <li><a href="#">Background Animations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AnimHub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="/static/home.js"></script>
+    <script src="/static/text.js"></script>
+    <script src="/static/hover.js"></script>
+    <script src="/static/loader.js"></script>
+    <script>
+        const animations = Object.assign({}, animations_loader, animations_text, animations_hover);
+    </script>
+
+
+</body>

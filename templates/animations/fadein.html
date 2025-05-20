@@ -1,0 +1,223 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle Burst Card Animation</title>
+  <style>
+    
+
+    .particle_card {
+      width: 360px;
+      height: 500px;
+      background: #fff;
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                  box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .particle_card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+    }
+
+    .particle_card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #a855f7, #ec4899);
+      clip-path: circle(60% at 50% 0);
+      transition: clip-path 0.6s ease;
+      z-index: 1;
+    }
+
+    .particle_card:hover .particle_card-bg {
+      clip-path: circle(80% at 50% 20%);
+    }
+
+    .particle_card-image {
+      position: absolute;
+      top: 20%;
+      width: 80%;
+      left: 10%;
+      height: 40%;
+      object-fit: cover;
+      z-index: 2;
+      transition: transform 0.5s ease;
+    }
+
+    .particle_card:hover .particle_card-image {
+      transform: scale(1.1);
+    }
+
+    .particle_card-content {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 24px;
+      z-index: 3;
+      background: linear-gradient(transparent, rgba(255, 255, 255, 0.95));
+    }
+
+    .particle_card-content h2 {
+      font-size: 1.9rem;
+      color: #6b21a8;
+      margin: 0;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    }
+
+    .particle_card:hover .particle_card-content h2 {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .particle_card-content p {
+      font-size: 1rem;
+      color: #4b5563;
+      margin: 12px 0 0;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    }
+
+    .particle_card:hover .particle_card-content p {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .particle_card-content .btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 20px;
+      background: #6b21a8;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.5s ease 0.4s, transform 0.5s ease 0.4s, 
+                  background 0.3s ease;
+    }
+
+    .particle_card:hover .particle_card-content .btn {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .particle_card-content .btn:hover {
+      background: #7e22ce;
+    }
+
+    .particle_card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+      opacity: 0;
+      z-index: 4;
+      transition: opacity 0.5s ease;
+    }
+
+    .particle_card:hover::before {
+      opacity: 1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #ec4899;
+      border-radius: 50%;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    @keyframes particleBurst {
+      0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .particle_card {
+      animation: fadeIn 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    }
+  </style>
+</head>
+<body>
+  <div class="particle_card">
+    <div class="particle_card-bg"></div>
+    <img class="particle_card-image" src="https://via.placeholder.com/288x180" alt="Particle Card Image">
+    <div class="particle_card-content">
+      <h2>Spark Creativity</h2>
+      <p>Ignite your ideas with dynamic visuals.</p>
+      <a href="#" class="btn">Unleash Now</a>
+    </div>
+  </div>
+
+  <script>
+    // Particle burst and tilt effect
+    const particleCard = document.querySelector('.particle_card');
+    particleCard.addEventListener('mouseenter', () => {
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('span');
+        particle.classList.add('particle');
+        const angle = Math.random() * 360;
+        const distance = Math.random() * 100 + 50;
+        const x = Math.cos(angle * Math.PI / 180) * distance;
+        const y = Math.sin(angle * Math.PI / 180) * distance;
+        particle.style.setProperty('--x', `${x}px`);
+        particle.style.setProperty('--y', `${y}px`);
+        particle.style.left = '50%';
+        particle.style.top = '50%';
+        particle.style.animation = `particleBurst ${0.5 + Math.random() * 0.5}s ease-out`;
+        particleCard.appendChild(particle);
+        setTimeout(() => particle.remove(), 1000);
+      }
+    });
+
+    particleCard.addEventListener('mousemove', (e) => {
+      const rect = particleCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateX = (y - centerY) / 100;
+      const rotateY = (centerX - x) / 100;
+
+      particleCard.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-12px)`;
+    });
+
+    particleCard.addEventListener('mouseleave', () => {
+      particleCard.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+    });
+  </script>
+</body>
+</html> -->

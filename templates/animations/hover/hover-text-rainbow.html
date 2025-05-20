@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rainbow Wave Hover Effect</title>
+  <style>
+    /* Rainbow Wave Hover Animation */
+    .rainbow-text {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 32px; /* Reduced size for a professional look */
+      font-weight: 700;
+      color: #361574;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .rainbow-text span {
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .rainbow-text:hover span {
+      animation: rainbow-wave 1s ease forwards;
+    }
+
+    .rainbow-text:hover span:nth-child(1) { animation-delay: 0s; }
+    .rainbow-text:hover span:nth-child(2) { animation-delay: 0.05s; }
+    .rainbow-text:hover span:nth-child(3) { animation-delay: 0.1s; }
+    .rainbow-text:hover span:nth-child(4) { animation-delay: 0.15s; }
+    .rainbow-text:hover span:nth-child(5) { animation-delay: 0.2s; }
+    .rainbow-text:hover span:nth-child(6) { animation-delay: 0.25s; }
+    .rainbow-text:hover span:nth-child(7) { animation-delay: 0.3s; }
+    .rainbow-text:hover span:nth-child(8) { animation-delay: 0.35s; }
+    .rainbow-text:hover span:nth-child(9) { animation-delay: 0.4s; }
+    .rainbow-text:hover span:nth-child(10) { animation-delay: 0.45s; }
+    .rainbow-text:hover span:nth-child(11) { animation-delay: 0.5s; }
+
+    @keyframes rainbow-wave {
+      0% {
+        transform: translateY(0);
+        color: #fff;
+      }
+      20% {
+        transform: translateY(-15px);
+        color: #ff1a75;
+      }
+      40% {
+        transform: translateY(0);
+        color: #ff9500;
+      }
+      60% {
+        transform: translateY(-7px);
+        color: #ffff00;
+      }
+      80% {
+        transform: translateY(0);
+        color: #00e1ff;
+      }
+      100% {
+        transform: translateY(0);
+        color: #9d4edd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="rainbow-text">
+        <span>H</span>
+        <span>e</span>
+        <span>l</span>
+        <span>l</span>
+        <span>o</span>
+        <span>&nbsp;</span>
+        <span>W</span>
+        <span>o</span>
+        <span>r</span>
+        <span>l</span>
+        <span>d</span>
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Rainbow Wave Hover Effect</h3>
+      <p>Hover over the text to see a cascading rainbow wave effect that ripples through each letter with vibrant colors and smooth motion.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Hover</span>
+        <span class="tag">Rainbow</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="rainbow-text">View Code</a>
+        <button class="download-btn" data-animation="rainbow-text">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

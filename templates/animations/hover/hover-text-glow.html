@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neon Glow Hover Text Effect</title>
+  <style>
+    /* Neon Glow Hover Animation */
+    .hover-text {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 32px; /* Reduced size for a professional look */
+      font-weight: 700;
+      color: #a19e9e;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .hover-text span {
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .hover-text:hover span {
+      color: #29e3a4;
+      text-shadow: 
+        0 0 5px #29e3a4, 
+        0 0 10px #29e3a4, 
+        0 0 20px #29e3a4, 
+        0 0 40px #29e3a4;
+      transform: translateY(-3px);
+    }
+
+    .hover-text span:nth-child(odd) { transition-delay: 0.05s; }
+    .hover-text span:nth-child(even) { transition-delay: 0.1s; }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="hover-text">
+        <span>H</span>
+        <span>e</span>
+        <span>l</span>
+        <span>l</span>
+        <span>o</span>
+        <span>&nbsp;</span>
+        <span>W</span>
+        <span>o</span>
+        <span>r</span>
+        <span>l</span>
+        <span>d</span>
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Neon Glow Hover Effect</h3>
+      <p>Hover over the text to see each character glow with a bright neon effect and slightly rise, creating a futuristic and eye-catching animation.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Hover</span>
+        <span class="tag">Neon</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="hover-text">View Code</a>
+        <button class="download-btn" data-animation="hover-text">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

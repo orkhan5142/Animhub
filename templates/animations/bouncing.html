@@ -1,0 +1,235 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic d Flip Animation</title>
+  <style>
+    
+
+    .d {
+      width: 340px;
+      height: 480px;
+      position: relative;
+      perspective: 1200px;
+      transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .d:hover {
+      transform: scale(1.03);
+    }
+
+    .d-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .d:hover .d-inner {
+      transform: rotateY(180deg);
+    }
+
+    .d-front,
+    .d-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .d-front {
+      background: linear-gradient(145deg, #1e1e3f, #2a2a5c);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .d-back {
+      background: linear-gradient(145deg, #2a2a5c, #1e1e3f);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .d-front img {
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.5s ease;
+    }
+
+    .d:hover .d-front img {
+      transform: scale(1.1) translateY(-10px);
+    }
+
+    .d-front h2 {
+      color: #fff;
+      font-size: 1.9rem;
+      margin: 15px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+    }
+
+    .d-front p {
+      color: #ccc;
+      font-size: 1rem;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    }
+
+    .d:hover .d-front h2,
+    .d:hover .d-front p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d-back h3 {
+      font-size: 1.7rem;
+      margin: 20px 0;
+    }
+
+    .d-back p {
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 0 20px;
+      color: #ccc;
+    }
+
+    .d-back .btn {
+      padding: 12px 25px;
+      background: #ff007a;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .d-back .btn:hover {
+      background: #d60066;
+      transform: scale(1.1);
+    }
+
+    .d::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 24px;
+      background: linear-gradient(45deg, #ff007a, #00f0ff, #ff007a);
+      background-size: 200%;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      animation: gradientFlow 4s linear infinite;
+    }
+
+    .d:hover::before {
+      opacity: 1;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+      100% {
+        background-position: 200% 50%;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .d {
+      animation: slideIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #00f0ff;
+      border-radius: 50%;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 10;
+    }
+  </style>
+</head>
+<body>
+  <div class="d">
+    <div class="d-inner">
+      <div class="d-front">
+        <img src="https://s3.amazonaws.com/libapps/accounts/47607/images/cooking_Free_Images.jpg" alt="d Image">
+        <h2>Innovate</h2>
+        <p>Explore cutting-edge technology with style.</p>
+      </div>
+      <div class="d-back">
+        <h3>Learn More</h3>
+        <p>Discover the future of design and innovation with our platform.</p>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Particle effect on hover
+    const d = document.querySelector('.d');
+    d.addEventListener('mouseenter', (e) => {
+      for (let i = 0; i < 10; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        d.appendChild(particle);
+
+        const rect = d.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        particle.style.left = ${x}px;
+        particle.style.top = ${y}px;
+
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = 50 + Math.random() * 50;
+        const translateX = Math.cos(angle) * distance;
+        const translateY = Math.sin(angle) * distance;
+
+        particle.animate(
+          [
+            { transform: 'translate(0, 0)', opacity: 1 },
+            { transform: translate(${translateX}px, ${translateY}px), opacity: 0 }
+          ],
+          {
+            duration: 800,
+            easing: 'ease-out',
+            delay: i * 50
+          }
+        ).onfinish = () => particle.remove();
+      }
+    });
+  </script>
+</body>
+</html> -->

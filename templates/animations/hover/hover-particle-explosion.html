@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Particle-hover Explosion Hover Effect</title>
+  <style>
+    /* Particle-hover Explosion Hover Animation */
+    .particle-hover-button {
+      position: relative;
+      width: 200px;
+      height: 60px;
+      background: #333;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 1;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .particle-hover-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(252, 70, 107, 0.4);
+    }
+
+    .particle-hover {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: linear-gradient(to right, #fc466b, #3f5efb);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .particle-hover:nth-child(1) {
+      top: 50%;
+      left: 50%;
+    }
+    .particle-hover:nth-child(2) {
+      top: 50%;
+      left: 50%;
+    }
+    .particle-hover:nth-child(3) {
+      top: 50%;
+      left: 50%;
+    }
+    .particle-hover:nth-child(4) {
+      top: 50%;
+      left: 50%;
+    }
+    .particle-hover:nth-child(5) {
+      top: 50%;
+      left: 50%;
+    }
+    .particle-hover:nth-child(6) {
+      top: 50%;
+      left: 50%;
+    }
+    .particle-hover:nth-child(7) {
+      top: 50%;
+      left: 50%;
+    }
+    .particle-hover:nth-child(8) {
+      top: 50%;
+      left: 50%;
+    }
+
+    .particle-hover-button:hover .particle-hover:nth-child(1) {
+      animation: particle-hover-1 0.8s ease-out forwards;
+    }
+    .particle-hover-button:hover .particle-hover:nth-child(2) {
+      animation: particle-hover-2 0.8s ease-out forwards;
+    }
+    .particle-hover-button:hover .particle-hover:nth-child(3) {
+      animation: particle-hover-3 0.8s ease-out forwards;
+    }
+    .particle-hover-button:hover .particle-hover:nth-child(4) {
+      animation: particle-hover-4 0.8s ease-out forwards;
+    }
+    .particle-hover-button:hover .particle-hover:nth-child(5) {
+      animation: particle-hover-5 0.8s ease-out forwards;
+    }
+    .particle-hover-button:hover .particle-hover:nth-child(6) {
+      animation: particle-hover-6 0.8s ease-out forwards;
+    }
+    .particle-hover-button:hover .particle-hover:nth-child(7) {
+      animation: particle-hover-7 0.8s ease-out forwards;
+    }
+    .particle-hover-button:hover .particle-hover:nth-child(8) {
+      animation: particle-hover-8 0.8s ease-out forwards;
+    }
+
+    @keyframes particle-hover-1 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(-50px, -50px); opacity: 0; }
+    }
+
+    @keyframes particle-hover-2 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(50px, -50px); opacity: 0; }
+    }
+
+    @keyframes particle-hover-3 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(-50px, 50px); opacity: 0; }
+    }
+
+    @keyframes particle-hover-4 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(50px, 50px); opacity: 0; }
+    }
+
+    @keyframes particle-hover-5 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(0, -70px); opacity: 0; }
+    }
+
+    @keyframes particle-hover-6 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(0, 70px); opacity: 0; }
+    }
+
+    @keyframes particle-hover-7 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(-70px, 0); opacity: 0; }
+    }
+
+    @keyframes particle-hover-8 {
+      0% { transform: translate(0, 0); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translate(70px, 0); opacity: 0; }
+    }
+
+    .particle-hover-button::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, #fc466b, #3f5efb);
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.3s ease;
+    }
+
+    .particle-hover-button:hover::before {
+      opacity: 1;
+    }
+
+    .particle-hover-button span {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <button class="particle-hover-button">
+        <span>Hover Me</span>
+        <div class="particle-hover"></div>
+        <div class="particle-hover"></div>
+        <div class="particle-hover"></div>
+        <div class="particle-hover"></div>
+        <div class="particle-hover"></div>
+        <div class="particle-hover"></div>
+        <div class="particle-hover"></div>
+        <div class="particle-hover"></div>
+      </button>
+    </div>
+    <div class="animation-info">
+      <h3>Particle Explosion Hover Effect</h3>
+      <p>A dynamic button that triggers a colorful particle-hover explosion animation when hovered, paired with a smooth gradient background transition for maximum visual impact.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Hover</span>
+        <span class="tag">Particle</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="particle-hover-button">View Code</a>
+        <button class="download-btn" data-animation="particle-hover-button">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

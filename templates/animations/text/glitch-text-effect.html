@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glitch Text Effect</title>
+  <style>
+    
+
+    .glitch-text {
+      font-size: 42px;
+      font-weight: bold;
+      position: relative;
+      color: #1f2937;
+      transition: color 0.3s ease;
+    }
+
+    .glitch-text:hover {
+      color: #9a9e9e;
+      
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+      content: "Hello World";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .glitch-text::before {
+      color: #ff0000;
+      clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+    }
+
+    .glitch-text::after {
+      color: #00fff0;
+      clip-path: polygon(0 66%, 100% 66%, 100% 100%, 0 100%);
+    }
+
+    .glitch-text:hover::before {
+      animation: glitch 0.3s infinite;
+    }
+
+    .glitch-text:hover::after {
+      animation: glitch 0.3s infinite reverse;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(-2px, -2px); }
+      60% { transform: translate(2px, 2px); }
+      80% { transform: translate(2px, -2px); }
+      100% { transform: translate(0); }
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="glitch-text">
+        Hello World
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Glitch Text Effect</h3>
+      <p>A trendy digital glitch effect triggered on hover, creating distortion for a cyberpunk theme.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Glitch</span>
+        <span class="tag">Distortion</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="glitch-text">View Code</a>
+        <button class="download-btn" data-animation="glitch-text">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

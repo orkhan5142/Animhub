@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Perspective Rotation Animation</title>
+  <style>
+    
+
+
+    /* Text Perspective Rotation Animation */
+    .perspective-text {
+      font-size: 42px;
+      font-weight: bold;
+      color: rgb(28, 0, 104);
+      transform-style: preserve-3d;
+      animation: rotate-text 8s ease-in-out infinite;
+    }
+
+    @keyframes rotate-text {
+      0%, 100% {
+        transform: rotateY(0deg) rotateX(0deg);
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+      }
+      25% {
+        transform: rotateY(20deg) rotateX(-10deg);
+        text-shadow: -5px 5px 10px rgba(99, 102, 241, 0.8);
+      }
+      50% {
+        transform: rotateY(0deg) rotateX(0deg);
+        text-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+      }
+      75% {
+        transform: rotateY(-20deg) rotateX(10deg);
+        text-shadow: 5px -5px 10px rgba(99, 102, 241, 0.8);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="perspective-text">
+        Hello World
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Perspective Rotation Effect</h3>
+      <p>A mesmerizing 3D rotation animation that makes text appear as if it's floating in three-dimensional space with dynamic shadows.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">3D</span>
+        <span class="tag">Perspective</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="perspective-rotation">View Code</a>
+        <button class="download-btn" data-animation="perspective-rotation">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

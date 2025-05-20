@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typewriter Text Animation</title>
+  <style>
+    
+
+ 
+
+    /* Typewriter Animation */
+    .typewriter h1 {
+      font-size: 42px;
+      font-weight: bold;
+      color: rgb(167, 117, 117);
+      overflow: hidden;
+      border-right: .15em solid #6366f1;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: 
+        typing 1s steps(40, end),
+        blink-caret .75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #6366f1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="typewriter">
+        <h1>Hello World</h1>
+    </div>
+
+    </div>
+    <div class="animation-info">
+      <h3>Typewriter Effect</h3>
+      <p>A classic typewriter animation that reveals text character by character with a blinking cursor.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Text</span>
+        <span class="tag">Typing</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="typewriter-text">View Code</a>
+        <button class="download-btn" data-animation="typewriter-text">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

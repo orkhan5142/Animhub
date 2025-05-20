@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Constellation Loading Animation</title>
+  <style>
+    /* Constellation Animation */
+    .constellation {
+      position: relative;
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+    }
+
+    .star {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: #260ff1;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22f10f;
+      animation: twinkle 3s infinite ease-in-out;
+    }
+
+    .star:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+    .star:nth-child(2) { top: 25%; left: 60%; animation-delay: 0.3s; }
+    .star:nth-child(3) { top: 60%; left: 80%; animation-delay: 0.6s; }
+    .star:nth-child(4) { top: 75%; left: 40%; animation-delay: 0.9s; }
+    .star:nth-child(5) { top: 45%; left: 30%; animation-delay: 1.2s; }
+    .star:nth-child(6) { top: 35%; left: 45%; animation-delay: 1.5s; }
+    .star:nth-child(7) { top: 65%; left: 60%; animation-delay: 1.8s; }
+
+    .connection {
+      position: absolute;
+      background-color: rgba(34, 241, 15, 0.3);
+      transform-origin: 0% 0%;
+      animation: connection-appear 3s infinite ease-in-out;
+    }
+
+    .connection:nth-child(8) {
+      width: 40px;
+      height: 2px;
+      top: calc(20% + 3px);
+      left: calc(20% + 3px);
+      transform: rotate(15deg);
+      animation-delay: 0.2s;
+    }
+
+    .connection:nth-child(9) {
+      width: 25px;
+      height: 2px;
+      top: calc(25% + 3px);
+      left: calc(60% + 3px);
+      transform: rotate(130deg);
+      animation-delay: 0.4s;
+    }
+
+    .connection:nth-child(10) {
+      width: 45px;
+      height: 2px;
+      top: calc(60% + 3px);
+      left: calc(80% + 3px);
+      transform: rotate(-135deg);
+      animation-delay: 0.6s;
+    }
+
+    .connection:nth-child(11) {
+      width: 35px;
+      height: 2px;
+      top: calc(75% + 3px);
+      left: calc(40% + 3px);
+      transform: rotate(-50deg);
+      animation-delay: 0.8s;
+    }
+
+    .connection:nth-child(12) {
+      width: 20px;
+      height: 2px;
+      top: calc(45% + 3px);
+      left: calc(30% + 3px);
+      transform: rotate(-90deg);
+      animation-delay: 1.0s;
+    }
+
+    .connection:nth-child(13) {
+      width: 22px;
+      height: 2px;
+      top: calc(35% + 3px);
+      left: calc(45% + 3px);
+      transform: rotate(50deg);
+      animation-delay: 1.2s;
+    }
+
+    .loading-text {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #22f10f;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      white-space: nowrap;
+      text-shadow: 0 0 5px rgba(34, 241, 15, 0.5);
+      opacity: 0;
+      animation: text-fade 3s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.4;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.5);
+      }
+    }
+
+    @keyframes connection-appear {
+      0%, 100% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes text-fade {
+      0%, 100% {
+        opacity: 0.2;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <div class="constellation">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="connection"></div>
+        <div class="connection"></div>
+        <div class="connection"></div>
+        <div class="connection"></div>
+        <div class="connection"></div>
+        <div class="connection"></div>
+        <div class="loading-text">Loading</div>
+      </div>
+    </div>
+    <div class="animation-info">
+      <h3>Constellation Effect</h3>
+      <p>An enchanting animation featuring twinkling stars connected by illuminated lines that form a constellation pattern.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Stars</span>
+        <span class="tag">Space</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="constellation">View Code</a>
+        <button class="download-btn" data-animation="constellation">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
