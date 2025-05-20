@@ -213,7 +213,7 @@
                 card.style.pointerEvents = 'auto';
             });
             break;
-        case 'loader':
+        case 'loading':
             sectionId = 'loader-section';
             break;
         case 'hover':
