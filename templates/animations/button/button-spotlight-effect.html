@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlight Button Effect</title>
+  <style>
+    /* Spotlight Button Effect */
+    .button-spotlight {
+      position: relative;
+      padding: 16px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background-color: #1e293b;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .button-spotlight span {
+      position: relative;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .button-spotlight::before {
+      content: '';
+      position: absolute;
+      left: var(--x, 50%);
+      top: var(--y, 50%);
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle closest-side, #d946ef, transparent);
+      border-radius: 50%;
+      transition: width 0.4s, height 0.4s;
+      z-index: 1;
+    }
+    .button-spotlight:hover::before {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <button class="button-spotlight"><span>Spotlight</span></button>
+    </div>
+    <div class="animation-info">
+      <h3>Spotlight Button</h3>
+      <p>An interactive effect where a spotlight follows the user's cursor inside the button on hover.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">JS</span>
+        <span class="tag">Button</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="button-spotlight">View Code</a>
+        <button class="download-btn" data-animation="button-spotlight">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

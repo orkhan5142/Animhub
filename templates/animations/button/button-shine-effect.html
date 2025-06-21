@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Shine Effect</title>
+  <style>
+    /* Shine Button Effect */
+    .button-shine {
+      position: relative;
+      padding: 16px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(to right, #6366f1, #8b5cf6);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: box-shadow 0.3s ease;
+    }
+    .button-shine:hover {
+      box-shadow: 0 5px 15px rgba(139, 92, 246, 0.4);
+    }
+    .button-shine::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+      transform: skewX(-25deg);
+      transition: left 0.6s ease;
+    }
+    .button-shine:hover::before {
+      left: 125%;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <button class="button-shine">Shine</button>
+    </div>
+    <div class="animation-info">
+      <h3>Button Shine Effect</h3>
+      <p>A classic effect where a glossy shine sweeps across the button on hover, giving it a premium feel.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Button</span>
+        <span class="tag">Hover</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="button-shine">View Code</a>
+        <button class="download-btn" data-animation="button-shine">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

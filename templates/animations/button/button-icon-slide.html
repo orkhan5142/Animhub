@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Icon Slide</title>
+  <style>
+    /* Icon Slide Button Effect */
+    .button-icon-slide {
+      display: inline-flex;
+      align-items: center;
+      padding: 16px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: white;
+      background-color: #db2777;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button-icon-slide:hover {
+        background-color: #be185d;
+    }
+    .button-icon-slide .icon {
+      margin-left: 8px;
+      width: 0;
+      opacity: 0;
+      transform: translateX(-10px);
+      transition: width 0.3s, opacity 0.3s, transform 0.3s ease;
+    }
+    .button-icon-slide:hover .icon {
+      width: 1.2em;
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <button class="button-icon-slide">
+        Submit <span class="icon">→</span>
+      </button>
+    </div>
+    <div class="animation-info">
+      <h3>Button Icon Slide</h3>
+      <p>A clear call-to-action where an icon gracefully slides into view next to the text on hover.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Button</span>
+        <span class="tag">Hover</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="button-icon-slide">View Code</a>
+        <button class="download-btn" data-animation="button-icon-slide">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

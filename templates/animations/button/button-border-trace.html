@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Border Trace</title>
+  <style>
+    /* Border Trace Button Effect */
+    .button-border-trace {
+      position: relative;
+      padding: 16px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0d9488;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+    .button-border-trace span {
+        position: relative;
+        z-index: 2;
+    }
+    .button-border-trace::before,
+    .button-border-trace::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #0d9488;
+      transition: width 0.3s ease-out;
+    }
+    .button-border-trace::before {
+      top: 0;
+      left: 0;
+    }
+    .button-border-trace::after {
+      bottom: 0;
+      right: 0;
+    }
+    .button-border-trace:hover::before,
+    .button-border-trace:hover::after {
+      width: 100%;
+    }
+    .button-border-trace i::before,
+    .button-border-trace i::after {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 0;
+      background-color: #0d9488;
+      transition: height 0.3s 0.3s ease-out;
+    }
+    .button-border-trace i::before {
+      bottom: 0;
+      left: 0;
+    }
+    .button-border-trace i::after {
+      top: 0;
+      right: 0;
+    }
+    .button-border-trace:hover i::before,
+    .button-border-trace:hover i::after {
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <button class="button-border-trace"><span>Trace Me</span><i></i></button>
+    </div>
+    <div class="animation-info">
+      <h3>Button Border Trace</h3>
+      <p>An elegant effect where the button's border is traced out on hover, drawing the user's focus.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Button</span>
+        <span class="tag">Hover</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="button-border-trace">View Code</a>
+        <button class="download-btn" data-animation="button-border-trace">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

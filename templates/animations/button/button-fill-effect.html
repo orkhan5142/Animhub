@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Fill Effect</title>
+  <style>
+    /* Fill Button Effect */
+    .button-fill {
+      position: relative;
+      padding: 16px 32px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #6366f1;
+      background-color: transparent;
+      border: 2px solid #6366f1;
+      border-radius: 8px;
+      cursor: pointer;
+      overflow: hidden;
+      transition: color 0.4s ease-in-out;
+      z-index: 1;
+    }
+    .button-fill::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #6366f1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease-in-out;
+      z-index: -1;
+    }
+    .button-fill:hover {
+      color: white;
+    }
+    .button-fill:hover::before {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+<body>
+  <div class="animation-card">
+    <div class="preview-area">
+      <button class="button-fill">Fill In</button>
+    </div>
+    <div class="animation-info">
+      <h3>Button Fill Effect</h3>
+      <p>A satisfying effect where the background color fills the button from the side on hover.</p>
+      <div class="animation-tags">
+        <span class="tag">CSS</span>
+        <span class="tag">Button</span>
+        <span class="tag">Hover</span>
+      </div>
+      <div class="animation-actions">
+        <a href="#" class="view-code" data-animation="button-fill">View Code</a>
+        <button class="download-btn" data-animation="button-fill">Download</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

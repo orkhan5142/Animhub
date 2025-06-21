@@ -20,7 +20,7 @@
                 <div class="nav-links">
                     
                     <a href="https://gcraft.tech/about">About</a>
-                    <a href="https://gcraft.tech/">Contact</a>
+                    <a href="https://gcraft.tech/discuss-project">Contact</a>
                 </div>
                 <button class="mobile-menu-btn">☰</button>
             </nav>
@@ -37,15 +37,17 @@
             </div>
             <div class="categories">
                 <div class="category active">All</div>
-                <div class="category">Button</div>
                 <div class="category">Loading</div>
-                <div class="category">Text</div>
                 <div class="category">Hover</div>
-                <div class="category">Background</div>
-                <div class="category">Scroll</div>
+                <div class="category">Text</div>
+                <div class="category">Button</div>
+                
+
+                
             </div>
         </div>
     </section>
+    
     
     <section id="loader-section" class="animation-section loader">
         <div class="container">
@@ -108,6 +110,23 @@
         </div>
         
 </section>
+<section id="button-section" class="animation-section button">
+    <div class="container">
+        <div class="section-title">
+            <h2>Button</h2>
+        </div>
+        <div class="animation-grid">
+            {% include 'animations/button/button-shine-effect.html' %}
+            {% include 'animations/button/button-fill-effect.html' %}
+            {% include 'animations/button/button-border-trace.html' %}
+            {% include 'animations/button/button-icon-slide.html' %}
+            {% include 'animations/button/button-3d-push.html' %}
+            {% include 'animations/button/button-spotlight-effect.html' %}
+            {% include 'animations/button/button-shutter-in.html' %}
+            {% include 'animations/button/button-arrow-circle.html' %}
+        </div>
+    </div>
+</section>
         
         
     
@@ -157,29 +176,26 @@
                     <h3>Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#animations">Animations</a></li>
-                        <li><a href="#tutorials">Tutorials</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                    <li><a href="#loader-section">Animations</a></li>
+                    <li><a href="https://gcraft.tech/about">About</a></li>
+                    <li><a href="https://gcraft.tech/discuss-project" >Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Categories</h3>
                     <ul>
-                        <li><a href="#">Button Animations</a></li>
-                        <li><a href="#">Loading Animations</a></li>
-                        <li><a href="#">Text Animations</a></li>
-                        <li><a href="#">Hover Effects</a></li>
-                        <li><a href="#">Background Animations</a></li>
+                        <li><a href="#loader-section">Loading Animations</a></li>
+                        <li><a href="#text-section">Text Animations</a></li>
+                        <li><a href="#hover-section">Hover Effects</a></li>
+                        <li><a href="#button-section">Button Animations</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <ul>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">GitHub</a></li>
-                        <li><a href="#">Discord</a></li>
-                        <li><a href="#">YouTube</a></li>
+                        <li><a href="https://www.linkedin.com/company/gcraft/">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/gcraft.tech/">Instagram</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61574935347332">Facebook</a></li>
                     </ul>
                 </div>
             </div>
@@ -195,8 +211,9 @@
     <script src="/static/text.js"></script>
     <script src="/static/hover.js"></script>
     <script src="/static/loader.js"></script>
+    <script src="/static/button.js"></script>
     <script>
-        const animations = Object.assign({}, animations_loader, animations_text, animations_hover);
+        const animations = Object.assign({}, animations_loader, animations_text, animations_hover, animations_button);
     </script>
 
 

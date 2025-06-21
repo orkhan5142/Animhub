@@ -17,6 +17,9 @@
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: #f4f6fa;
