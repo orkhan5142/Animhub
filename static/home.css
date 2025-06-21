@@ -421,6 +421,8 @@ nav {
     background-color: var(--primary-dark);
 }
 
+
+/* Footer düzenlemeleri */
 footer {
     background-color: var(--dark);
     color: white;
@@ -428,20 +430,39 @@ footer {
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .footer-section {
-    flex: 1;
-    min-width: 200px;
+    padding: 0 1rem;
 }
 
 .footer-section h3 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     font-size: 1.25rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.footer-section p {
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .footer-section ul {
@@ -449,25 +470,52 @@ footer {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .footer-section ul li a {
     color: #cbd5e1;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    display: block;
 }
 
 .footer-section ul li a:hover {
     color: white;
+    padding-left: 5px;
 }
 
 .footer-bottom {
     border-top: 1px solid #334155;
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding-top: 2rem;
     text-align: center;
     color: #cbd5e1;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem 1rem 0;
+}
+
+/* Mobil düzenlemeleri */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section ul li a:hover {
+        padding-left: 0;
+    }
 }
 
 /* Animation examples for the preview area */
