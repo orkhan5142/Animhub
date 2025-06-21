@@ -422,7 +422,7 @@ nav {
 }
 
 
-/* Footer düzenlemeleri */
+
 footer {
     background-color: var(--dark);
     color: white;
@@ -497,7 +497,7 @@ footer {
     padding: 2rem 1rem 0;
 }
 
-/* Mobil düzenlemeleri */
+
 @media (max-width: 768px) {
     .footer-content {
         grid-template-columns: 1fr;
