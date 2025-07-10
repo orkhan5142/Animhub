@@ -68,7 +68,11 @@ nav {
     color: var(--primary);
     margin-right: auto;
 }
-
+.logo .logo-byline {
+         
+    margin-left: 8px;     
+    vertical-align: middle; 
+}
 
 .logo-icon {
     margin-right: 0.5rem;
