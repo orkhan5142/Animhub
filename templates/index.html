@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AnimHub - Free Web Animations</title>
     <link rel="stylesheet" href="/static/home.css">
+    <style>
+        .logo .logo-byline {
+         
+    margin-left: 8px;     
+    vertical-align: middle; 
+}
+    </style>
+    
 
     
 </head>
@@ -16,9 +24,16 @@
                 <div class="logo">
                     <span class="logo-icon">✦</span>
                     AnimHub
+                    <span class="logo-byline">by GCraft</span>
                 </div>
                 <div class="nav-links">
+                    <!-- Categories for Mobile Nav -->
+                    <a href="#loading-section" class="nav-category-link">Loading</a>
+                    <a href="#hover-section" class="nav-category-link">Hover</a>
+                    <a href="#text-section" class="nav-category-link">Text</a>
+                    <a href="#button-section" class="nav-category-link">Button</a>
                     
+                    <!-- Original Links -->
                     <a href="https://gcraft.tech/about">About</a>
                     <a href="https://gcraft.tech/discuss-project">Contact</a>
                 </div>
@@ -30,7 +45,7 @@
     <section class="hero" id="home">
         <div class="navbar-container">
             <h1>Free High-Quality Web Animations</h1>
-            <p>Discover and download beautiful CSS and JavaScript animations for your next web project. Preview and customize animations before downloading the code.</p>
+            <p>Discover and download elegant CSS and JavaScript animations for your next web project. Preview and customize animations before downloading the code.</p>
             <div class="search-bar">
                 <input type="text" placeholder="Search animations...">
                 <button>Search</button>
@@ -45,7 +60,7 @@
         </div>
     </section>
     
-    <section id="loader-section" class="animation-section loader">
+    <section id="loading-section" class="animation-section loader">
         <div class="container">
         <div class="section-title">
             <h2>Loading</h2>
@@ -130,7 +145,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modalTitle">Animation Name</h2>
-                <button class="close-modal">&times;</button>
+                <button class="close-modal">×</button>
             </div>
             <div class="modal-body">
                 <div class="preview-section" id="modalPreview">
@@ -171,7 +186,7 @@
                     <h3>Links</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                    <li><a href="#loader-section">Animations</a></li>
+                    <li><a href="#loading-section">Animations</a></li>
                     <li><a href="https://gcraft.tech/about">About</a></li>
                     <li><a href="https://gcraft.tech/discuss-project" >Contact</a></li>
                     </ul>
@@ -179,7 +194,7 @@
                 <div class="footer-section">
                     <h3>Categories</h3>
                     <ul>
-                        <li><a href="#loader-section">Loading Animations</a></li>
+                        <li><a href="#loading-section">Loading Animations</a></li>
                         <li><a href="#text-section">Text Animations</a></li>
                         <li><a href="#hover-section">Hover Effects</a></li>
                         <li><a href="#button-section">Button Animations</a></li>
@@ -195,7 +210,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 GCraft. All Rights Reserved.</p>
+                <p>© 2025 GCraft. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -207,6 +222,7 @@
     <script src="/static/hover.js"></script>
     <script src="/static/loader.js"></script>
     <script src="/static/button.js"></script>
+
     <script>
         const animations = Object.assign({}, animations_loader, animations_text, animations_hover, animations_button);
     </script>
