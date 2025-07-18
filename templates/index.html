@@ -7,6 +7,77 @@
     <link rel="stylesheet" href="/static/home.css">
     
 </head>
+    <style>
+    .by-gcraft {
+        display: flex;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        color: #23272f;
+        margin-bottom: -1rem;
+        margin-left: 1.2rem;
+        margin-top: -1.7rem; /* Move even closer to nav */
+        background: none;
+        border-radius: 0.7rem;
+        padding: 0.1rem 0.7rem 0.1rem 0.7rem;
+        box-shadow: none;
+    }
+
+    .by-text {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #888;
+        text-transform: lowercase;
+        letter-spacing: 0.05rem;
+    }
+
+    .gcraft-logo {
+        width: 30px;
+        height: 30px;
+        object-fit: contain;
+        transition: var(--transition);
+        margin-right: -0.2rem;
+    }
+
+    .gcraft-name {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #23272f;
+        letter-spacing: 0.02rem;
+        text-shadow: 0 1px 2px #f3f3f3;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .by-text {
+            font-size: 0.9rem;
+        }
+        .gcraft-logo {
+            width: 25px;
+            height: 25px;
+        }
+        .gcraft-name {
+            font-size: 1rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .by-text {
+            font-size: 0.8rem;
+        }
+        .gcraft-logo {
+            height: 30px;
+        }
+        .gcraft-name {
+            font-size: 0.9rem;
+        }
+    }
+    /* Remove underline and black color from the link */
+    .navbar-container > a[href="https://gcraft.tech"] {
+        text-decoration: none !important;
+        color: inherit !important;
+        box-shadow: none !important;
+    }
+    </style>
 <body>
     <header>
         <div class="navbar-container">
@@ -14,8 +85,8 @@
             <nav>
                 <div class="logo">
                     <span class="logo-icon">✦</span>
-                    AnimHub
-                    <span class="logo-byline">by GCraft</span>
+                    Animations
+                    
                 </div>
                 <div class="nav-links">
                     <!-- Categories for Mobile Nav -->
@@ -30,9 +101,15 @@
                 </div>
                 <button class="mobile-menu-btn">☰</button>
             </nav>
+            <a href="https://gcraft.tech">
+                <div class="by-gcraft">
+                    <span class="by-text">by</span>
+                    <img src="https://gcraft.tech/static/media/GCraft_icon-01.a41d81cd7980932c74b07424a205d168.svg" alt="GCraft Icon" class="gcraft-logo">
+                    <span class="gcraft-name">GCraft</span>
+                </div>
+            </a>
         </div>
     </header>
-    
     <section class="hero" id="home">
         <div class="navbar-container">
             <h1>Free High-Quality Web Animations</h1>

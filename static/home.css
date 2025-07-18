@@ -571,6 +571,7 @@ footer {
     font-size: 1.8rem;
     color: var(--dark);
     padding: 0;
+    margin-bottom: -1rem;
 }
 
 .nav-category-link {
